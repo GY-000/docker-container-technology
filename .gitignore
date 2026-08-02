@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+
+# Runtime
+.git.zip
+.buildstamp
+.runtime-postbuildstamp
+
+# Sensitive config (keep only the sanitized version)
+openclaw.local.json
+
+# System
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

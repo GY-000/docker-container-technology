@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  # ========== Ollama 本地大模型服务 ==========
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    environment:
+      - OLLAMA_KEEP_ALIVE=24h
+      - OLLAMA_HOST=0.0.0.0
+
+  # ========== OpenClaw 微信消息中间件 ==========
+  openclaw:
+    image: ghcr.nju.edu.cn/openclaw/openclaw:2026.6.11
+    container_name: openclaw
+    depends_on:
+      - ollama
+    volumes:
+      - ./openclaw.json:/app/openclaw.json:ro
+      - openclaw_sessions:/app/sessions
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
+  openclaw_sessions:
