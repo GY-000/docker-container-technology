@@ -62,4 +62,3 @@ docker-container-technology/
 ## 许可证
 
 MIT License
-*（内容由AI生成，仅供参考）*
