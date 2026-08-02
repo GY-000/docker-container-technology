@@ -11,7 +11,7 @@ AIGC:
 
 # docker-container-technology
 
-Docker 容器技术实践项目，包含镜像管理、多阶段构建、Harbor 私有仓库部署。
+Docker 容器技术实践项目：OpenClaw + Ollama 微信 AI 智能应答系统。
 
 ## 项目简介
 
@@ -33,18 +33,28 @@ Docker 容器技术实践项目，包含镜像管理、多阶段构建、Harbor 
 
 ```
 docker-container-technology/
+├── docker-compose.yml    # Docker Compose 编排文件
 ├── openclaw.json         # OpenClaw 核心配置（脱敏版）
 ├── DEPLOY.md             # 部署文档
-└── README.md
+├── README.md             # 项目说明
+├── .gitignore            # Git 忽略规则
+└── LICENSE               # MIT 许可证
 ```
 
 ## 快速开始
 
-1. 安装 Docker 和 Docker Compose
-2. 部署 Ollama 并加载模型
-3. 配置 `openclaw.json`（填入 API Key 和微信账号信息）
-4. 启动 OpenClaw 容器
-5. 扫码登录微信，测试消息响应
+```bash
+# 1. 安装 Docker 和 Docker Compose
+# 2. 拉取 Ollama 模型
+ollama pull qwen2.5:7b
+
+# 3. 编辑 openclaw.json，填入 API Key 和微信账号信息
+# 4. 一键启动
+docker-compose up -d
+
+# 5. 查看日志，扫码登录微信
+docker-compose logs -f openclaw
+```
 
 > 详细步骤见 [DEPLOY.md](./DEPLOY.md)
 
