@@ -1,0 +1,60 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/node/.openclaw/workspace"
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "bind": "lan",
+    "controlUi": {
+      "enabled": true,
+      "allowedOrigins": [
+        "*"
+      ]
+    },
+    "auth": {
+      "token": "YOUR_AUTH_TOKEN"
+    }
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.6.11",
+    "lastTouchedAt": "2026-07-17T08:52:59.577Z"
+  },
+  "models": {
+    "providers": {
+      "Bailian": {
+        "apiKey": "YOUR_BAILIAN_API_KEY",
+        "api": "openai-completions",
+        "baseUrl": "YOUR_BAILIAN_BASE_URL",
+        "auth": "api-key",
+        "models": [
+          {
+            "api": "openai-completions",
+            "id": "qwen3.7-plus",
+            "name": "qwen3.7-plus",
+            "baseUrl": "YOUR_BAILIAN_BASE_URL",
+            "contextTokens": 200000,
+            "contextWindow": 200000,
+            "maxTokens": 200000,
+            "input": []
+          }
+        ],
+        "authHeader": false,
+        "maxTokens": 200000
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "openclaw-weixin": {
+        "enabled": true
+      }
+    }
+  },
+  "channels": {
+    "openclaw-weixin": {
+      "channelConfigUpdatedAt": "2026-07-17T08:52:59.438Z"
+    }
+  }
+}
